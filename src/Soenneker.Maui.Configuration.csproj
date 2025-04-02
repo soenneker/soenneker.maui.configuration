@@ -2,7 +2,6 @@
 
     <PropertyGroup>
         <TargetFrameworks>net9.0;net9.0-android;net9.0-ios</TargetFrameworks>
-        <UseMaui Condition="'$(TargetFramework)' != 'net9.0'">true</UseMaui>
         <SingleProject>true</SingleProject>
         <Nullable>enable</Nullable>
         <Platforms>AnyCPU</Platforms>
