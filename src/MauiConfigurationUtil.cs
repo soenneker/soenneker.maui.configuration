@@ -42,7 +42,7 @@ public static class MauiConfigurationUtil
     {
         try
         {
-            using Stream? stream = FileSystem.OpenAppPackageFileAsync(fileName).AwaitSync();
+            using Stream? stream = FileSystem.OpenAppPackageFileAsync(fileName).AwaitSyncSafe();
 
             if (stream != null)
             {
