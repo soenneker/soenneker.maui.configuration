@@ -42,7 +42,7 @@ jobs:
 
           for i in $(seq 1 $retries); do
             echo "::group::dotnet restore (attempt $i/$retries)"
-            if dotnet restore; then
+            if dotnet restore -v detailed; then
               echo "::endgroup::"
               echo "✅ dotnet restore succeeded on attempt $i."
               break
