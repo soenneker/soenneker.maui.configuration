@@ -37,25 +37,24 @@ jobs:
 
           for i in $(seq 1 $retries); do
             echo "::group::dotnet restore (attempt $i/$retries)"
-            # Capture both stdout and stderr
             output=""
             if output=$(dotnet restore 2>&1); then
-              echo "$output"
+              printf '%s\n' "$output"
               echo "::endgroup::"
               echo "dotnet restore succeeded on attempt $i."
               break
             else
-              echo "$output"
+              # show the actual error for this attempt
+              printf '%s\n' "$output"
               echo "::endgroup::"
               if [ "$i" -lt "$retries" ]; then
-                # Pure bash integer backoff (exponent must be integer)
                 wait_time=$(( base_wait_time * (exponent ** (i - 1)) ))
                 echo "dotnet restore failed (attempt $i). Retrying in ${wait_time}s…"
                 sleep "$wait_time"
               else
                 echo "::error::dotnet restore failed after $retries attempts"
-                # Re-emit the final attempt's error so it appears right at failure
-                echo "$output"
+                # re-emit final attempt output right before failing the step
+                printf '%s\n' "$output"
                 exit 1
               fi
             fi
