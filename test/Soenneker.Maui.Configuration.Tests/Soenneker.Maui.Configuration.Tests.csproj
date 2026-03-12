@@ -27,7 +27,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\src\Soenneker.Maui.Configuration.csproj" />
+        <ProjectReference Include="..\..\src\Soenneker.Maui.Configuration\Soenneker.Maui.Configuration.csproj" />
     </ItemGroup>
 
     <ItemGroup>
