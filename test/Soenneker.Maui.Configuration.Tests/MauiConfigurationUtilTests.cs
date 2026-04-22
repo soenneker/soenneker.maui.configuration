@@ -1,17 +1,16 @@
-﻿using Soenneker.Tests.FixturedUnit;
-using Xunit;
+using Soenneker.Tests.HostedUnit;
 
 namespace Soenneker.Maui.Configuration.Tests;
 
-[Collection("Collection")]
-public class MauiConfigurationUtilTests : FixturedUnitTest
+[ClassDataSource<Host>(Shared = SharedType.PerTestSession)]
+public class MauiConfigurationUtilTests : HostedUnitTest
 {
-    public MauiConfigurationUtilTests(Fixture fixture, ITestOutputHelper output) : base(fixture, output)
+    public MauiConfigurationUtilTests(Host host) : base(host)
     {
 
     }
 
-    [Fact]
+    [Test]
     public void Default()
     {
 
