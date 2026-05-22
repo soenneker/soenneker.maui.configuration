@@ -46,7 +46,7 @@
 
     <ItemGroup>
         <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="10.0.8" />
-        <PackageReference Include="Microsoft.Maui.Controls" Version="10.0.60" />
+        <PackageReference Include="Microsoft.Maui.Controls" Version="10.0.70" />
         <PackageReference Include="Soenneker.Extensions.String" Version="4.0.675" />
         <PackageReference Include="Soenneker.Extensions.Task" Version="4.0.121" />
     </ItemGroup>
