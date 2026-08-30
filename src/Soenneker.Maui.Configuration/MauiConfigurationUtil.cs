@@ -34,7 +34,7 @@ public static class MauiConfigurationUtil
     }
 
     /// <summary>
-    /// Attempts to add a JSON configuration file from the app package or local storage.
+    /// Attempts to add a JSON configuration file from the app package.
     /// </summary>
     /// <param name="builder">The configuration builder.</param>
     /// <param name="fileName">The JSON file name.</param>
@@ -55,7 +55,6 @@ public static class MauiConfigurationUtil
         }
         catch (FileNotFoundException)
         {
-            // Replace with proper logging if available
             Debug.WriteLine($"{fileName} not found. Skipping...");
         }
     }
